@@ -216,3 +216,12 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener("mousemove", (e) => {
+  let shape = document.createElement("div");
+  shape.classList.add("floating-shape");
+  document.body.appendChild(shape);
+  shape.style.left = `${e.clientX}px`;
+  shape.style.top = `${e.clientY}px`;
+  setTimeout(() => shape.remove(), 500);
+});
