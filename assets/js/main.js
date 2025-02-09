@@ -221,7 +221,33 @@ document.addEventListener("mousemove", (e) => {
   let shape = document.createElement("div");
   shape.classList.add("floating-shape");
   document.body.appendChild(shape);
-  shape.style.left = `${e.clientX}px`;
-  shape.style.top = `${e.clientY}px`;
+  shape.style.left = '${e.clientX}px';
+  shape.style.top = '${e.clientY}px';
   setTimeout(() => shape.remove(), 500);
+});
+
+
+particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('Particles.js loaded successfully');
+});
+
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 100
+    },
+    // other particle configurations
+  },
+  "interactivity": {
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      }
+    }
+  }
 });
